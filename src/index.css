@@ -1,0 +1,28 @@
+nav{
+  background-color: rgb(22, 22, 23);
+}
+
+.nav-item{
+  padding: 0.3rem;
+}
+
+header{
+  padding: 4rem;
+  background-image: url(./assets/imgs/background-header.jpg);
+  background-position: center;
+  background-size: cover;
+  color: white;
+  text-align: center;
+}
+
+footer{
+  padding: 1rem;
+  background-color: rgb(22, 22, 23);
+  color: white;
+  text-align: center;
+}
+
+.botones-card{
+  display:flex;
+  justify-content: space-around;
+}
