@@ -26,3 +26,13 @@ footer{
   display:flex;
   justify-content: space-around;
 }
+
+.formLogin{
+  margin: 2rem;
+  text-align: center;
+}
+
+.formRegister{
+  margin: 2rem;
+  text-align: center;
+}
