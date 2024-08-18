@@ -35,7 +35,6 @@ const FormLogin = () => {
 
     return (
         <>
-            <Header/>
             <form className="formLogin" onSubmit={validarDatos}>
                 <h1>Login</h1>
                 <div className="mb-3">

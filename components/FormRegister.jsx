@@ -46,7 +46,6 @@ const FormRegister = () => {
 
   return (
       <>
-          <Header/>
           <form className="formRegister" onSubmit={validarDatos}>
               <h1>Regístrate</h1>
               <div className="mb-3">

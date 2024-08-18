@@ -36,3 +36,10 @@ footer{
   margin: 2rem;
   text-align: center;
 }
+
+.carrito th, td {
+  padding: 5px;
+}
+.carrito th {
+  background-color: #f2f2f2;
+}

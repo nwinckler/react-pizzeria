@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { formatoValor } from '../helpers/formatoValor';
+import Cart from './Cart';
 
 const Navbar = () => {
-    const total = 25000;
-    const token = true;
+     
+    const [total, setTotal] = useState(25000);
+    const [token, setToken] = useState(true);
+
+    //const total = 25000;
+    //const token = true;
+
     return (
         <>
             <nav className="navbar navbar-expand-lg">
@@ -14,22 +20,24 @@ const Navbar = () => {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarText">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li className="nav-item"><button type="button" class="btn btn-outline-light">🍕Home</button></li>
+                            <li className="nav-item"><button type="button" className="btn btn-outline-light">🍕Home</button></li>
                             {
                                 token ? (
                                     <>
-                                    <li className="nav-item"><button type="button" class="btn btn-outline-light">🔐Login</button></li>
-                                    <li className="nav-item"><button type="button" class="btn btn-outline-light">🔐Register</button></li>
+                                    <li className="nav-item"><button type="button" className="btn btn-outline-light">🔐Login</button></li>
+                                    <li className="nav-item"><button type="button" className="btn btn-outline-light">🔐Register</button></li>
                                     </>
                                 ):(
                                     <>
-                                    <li className="nav-item"><button type="button" class="btn btn-outline-light">🔓Profile</button></li>
-                                    <li className="nav-item"><button type="button" class="btn btn-outline-light">🔒Logout</button></li>
+                                    <li className="nav-item"><button type="button" className="btn btn-outline-light">🔓Profile</button></li>
+                                    <li className="nav-item"><button type="button" className="btn btn-outline-light">🔒Logout</button></li>
                                     </>
                                 )
                             }
                         </ul>
-                        <span className="nav-item"><button type="button" class="btn btn-outline-primary">🛒Total: ${formatoValor(total)}</button></span>
+                        {/* <span className="nav-item"><button type="button" className="btn btn-outline-primary">🛒Total: ${<Cart/>}</button></span> */}
+                        <span className="nav-item"><button type="button" className="btn btn-outline-primary">🛒Total: ${formatoValor(total)}</button></span>
+
                     </div>
                 </div>
             </nav>
@@ -37,4 +45,4 @@ const Navbar = () => {
     )
 }
 
-export default Navbar
+export default Navbar;
