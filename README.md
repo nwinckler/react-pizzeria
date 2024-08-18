@@ -10,7 +10,10 @@ Creación de página con react (Navbar, Home y Footer)
 Creación de formulario de registro y login
 ***
 
-
+## Hito 3 Pizzeria Mamma Mia (18-08-2024)
+***
+Creación de carrito de compras y home con renderización dinámica de componentes
+***
 
 
 deploy: https://nwinckler.github.io/react-pizzeria/
