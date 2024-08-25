@@ -15,5 +15,9 @@ Creación de formulario de registro y login
 Creación de carrito de compras y home con renderización dinámica de componentes
 ***
 
+## Hito 4 Pizzeria Mamma Mia (25-08-2024)
+***
+Consumo de una API externa en la aplicación en Home, y creación de componente Pizza
+***
 
 deploy: https://nwinckler.github.io/react-pizzeria/
