@@ -8,6 +8,7 @@ import FormLogin from '../components/FormLogin';
 import FormRegister from '../components/FormRegister';
 import productos from "./pizzas.js"
 import Cart from '../components/Cart.jsx';
+import Pizza from '../components/Pizza.jsx';
 
 function App() {
 
@@ -15,10 +16,11 @@ function App() {
     <>
       <Navbar/>
       <Header/>
-      <Home productos={productos}/>
+      {/* <Home/> */}
       {/* <Cart productos={productos}/> */}
       {/* <FormLogin/>
       <FormRegister/> */}
+      <Pizza/>
       <Footer/>
     </>
   )
