@@ -1,6 +1,5 @@
 import React from 'react'
 import { formatoValor } from '../helpers/formatoValor'
-import { separaArray } from '../helpers/separaArray'
 
 const CardPizza = ({producto}) => {
     return (

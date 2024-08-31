@@ -1,6 +1,5 @@
 import React,{useEffect, useState} from 'react'
-import Header from './Header'
-import CardPizza from './CardPizza'
+import CardPizza from '../components/CardPizza'
 
 const Home = () => {
   const [productos, setProductos] = useState([]);

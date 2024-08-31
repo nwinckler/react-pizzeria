@@ -1,6 +1,5 @@
 import React from 'react'
 import { useState } from 'react'
-import Header from './Header';
 
 const FormLogin = () => {
     const [email, setEmail] = useState('');

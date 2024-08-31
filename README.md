@@ -20,4 +20,8 @@ Creación de carrito de compras y home con renderización dinámica de component
 Consumo de una API externa en la aplicación en Home, y creación de componente Pizza
 ***
 
+## Hito 5 Pizzeria Mamma Mia (01-09-2024)
+***
+React Router I
+***
 deploy: https://nwinckler.github.io/react-pizzeria/
