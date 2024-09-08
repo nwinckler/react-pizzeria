@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { formatoValor } from '../helpers/formatoValor'
+import { CartContext } from '../context/CartContext'
 
 const CardPizza = ({producto}) => {
+    const {cart, agregarProducto} = useContext(CartContext);   
+    
     return (
         <>  
         <div className="card w-auto h-100">
@@ -20,7 +23,7 @@ const CardPizza = ({producto}) => {
             <p className="fw-medium fs-4 text-center my-2">Precio: ${formatoValor(producto.price)}</p>
             <div className="card-body text-center botones-card">
                 <button type="button" className="btn btn-outline-dark"><a href="#" className="text-reset text-decoration-none">Ver Más 👀</a></button>
-                <button type="button" className="btn btn-outline-dark"><a href="#" className="text-reset text-decoration-none">Añadir 🛒 </a></button>
+                <button type="button" className="btn btn-outline-dark" onClick={() => agregarProducto(producto)}><a href="#" className="text-reset text-decoration-none">Añadir 🛒 </a></button>
             </div>
         </div>
         </>

@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import productos from "./pizzas.js";
+import CartProvider from './context/CartContext.jsx';
 import Navbar from './components/Navbar';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer'
@@ -17,18 +18,20 @@ function App() {
 
   return (
     <>
-      <Navbar/>
-      <Header/>
-      <Routes>
-        <Route path="/react-pizzeria/" element={<Home/>}/>
-        <Route path="/react-pizzeria/register" element={<FormRegister/>}/>
-        <Route path="/react-pizzeria/login" element={<FormLogin/>}/>
-        <Route path="/react-pizzeria/cart" element={<Cart productos={productos}/>}/>
-        <Route path="/react-pizzeria/pizza/p001" element={<Pizza/>}/>
-        <Route path="/react-pizzeria/profile" element={<Profile/>}/>
-        <Route path="/react-pizzeria/404" element={<NotFound/>}/>
-        <Route path="*" element={<NotFound/>}/>
-      </Routes>
+      <CartProvider>
+        <Navbar/>
+        <Header/>
+        <Routes>
+          <Route path="/react-pizzeria/" element={<Home/>}/>
+          <Route path="/react-pizzeria/register" element={<FormRegister/>}/>
+          <Route path="/react-pizzeria/login" element={<FormLogin/>}/>
+          <Route path="/react-pizzeria/cart" element={<Cart productos={productos}/>}/>
+          <Route path="/react-pizzeria/pizza/p001" element={<Pizza/>}/>
+          <Route path="/react-pizzeria/profile" element={<Profile/>}/>
+          <Route path="/react-pizzeria/404" element={<NotFound/>}/>
+          <Route path="*" element={<NotFound/>}/>
+        </Routes>
+      </CartProvider>
       <Footer/>
     </>
   )

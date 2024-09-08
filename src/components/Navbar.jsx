@@ -1,11 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Link } from 'react-router-dom';
 import { formatoValor } from '../helpers/formatoValor';
+import { CartContext } from '../context/CartContext';
 
 const Navbar = () => {
-     
-    const [total, setTotal] = useState(25000);
+    const {totalAPagar} = useContext(CartContext);      
+
     const [token, setToken] = useState(true);
+
+    
 
     return (
         <>
@@ -72,7 +75,7 @@ const Navbar = () => {
                         <span className="nav-item">
                             <Link to='/react-pizzeria/cart'>
                                 <button type="button" className="btn btn-outline-primary">
-                                    🛒Total: ${formatoValor(total)}
+                                    🛒Total: ${formatoValor(totalAPagar)}
                                 </button>
                             </Link>
                         </span>
