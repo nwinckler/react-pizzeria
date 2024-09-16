@@ -1,9 +1,11 @@
 import React, { useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { formatoValor } from '../helpers/formatoValor'
 import { CartContext } from '../context/CartContext'
 
 const CardPizza = ({producto}) => {
-    const {cart, agregarProducto} = useContext(CartContext);   
+    const {cart, agregarProducto} = useContext(CartContext);
+    const navigate = useNavigate();
     
     return (
         <>  
@@ -22,7 +24,7 @@ const CardPizza = ({producto}) => {
             </ul>
             <p className="fw-medium fs-4 text-center my-2">Precio: ${formatoValor(producto.price)}</p>
             <div className="card-body text-center botones-card">
-                <button type="button" className="btn btn-outline-dark"><a href="#" className="text-reset text-decoration-none">Ver Más 👀</a></button>
+                <button type="button" className="btn btn-outline-dark" onClick={()=>navigate(`/react-pizzeria/pizza/${producto.id}`)}>Ver Más 👀</button>
                 <button type="button" className="btn btn-outline-dark" onClick={() => agregarProducto(producto)}><a href="#" className="text-reset text-decoration-none">Añadir 🛒 </a></button>
             </div>
         </div>

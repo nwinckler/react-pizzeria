@@ -1,11 +1,14 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import { UserContext } from '../context/UserContext';
 
 const FormLogin = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errorCampos, setErrorCampos] = useState(false);
     const [errorPassword, setErrorPassword] = useState(false);
+
+    const { login } = useContext(UserContext);
 
     const validarDatos = (e) => {
         e.preventDefault();
@@ -28,7 +31,9 @@ const FormLogin = () => {
         setErrorPassword(false);
         setEmail('');
         setPassword('');
-
+        
+        login()
+        
         alert("Ingresaste con éxito")
     };
 

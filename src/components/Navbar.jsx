@@ -1,14 +1,12 @@
-import React, { useState, useContext } from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom';
 import { formatoValor } from '../helpers/formatoValor';
 import { CartContext } from '../context/CartContext';
+import { UserContext } from "../context/UserContext";
 
 const Navbar = () => {
-    const {totalAPagar} = useContext(CartContext);      
-
-    const [token, setToken] = useState(true);
-
-    
+    const { totalAPagar } = useContext(CartContext);
+    const { logout, tokenEstado } = useContext(UserContext);
 
     return (
         <>
@@ -28,7 +26,17 @@ const Navbar = () => {
                                 </Link>
                             </li>
                             {
-                                token ? (
+                                tokenEstado ? (
+                                    <>
+                                    <li className="nav-item">
+                                        {/* <Link to='/react-pizzeria/logout'> */}
+                                            <button type="button" className="btn btn-outline-light" onClick={logout}>
+                                                🔒Logout
+                                            </button>
+                                        {/* </Link> */}
+                                    </li>
+                                    </>
+                                ):(
                                     <>
                                     <li className="nav-item">
                                         <Link to='/react-pizzeria/login'>
@@ -44,34 +52,23 @@ const Navbar = () => {
                                             </button>
                                         </Link>
                                     </li>
-                                    </>
-                                ):(
-                                    <>
-                                    <li className="nav-item">
-                                        <Link to='/react-pizzeria/profile'>
-                                            <button type="button" className="btn btn-outline-light">
-                                                🔓Profile
-                                            </button>
-                                        </Link>
-                                    </li>
-                                    <li className="nav-item">
-                                        <Link to='/react-pizzeria/logout'>
-                                            <button type="button" className="btn btn-outline-light">
-                                                🔒Logout
-                                            </button>
-                                        </Link>
-                                    </li>
-                                    </>
+                                    </> 
                                 )
                             }
                         </ul>
-                        <span className="nav-item">
-                            <Link to='/react-pizzeria/profile'>
-                                <button type="button" className="btn btn-outline-light">
-                                    🖐️Perfil
-                                </button>
-                            </Link>
-                        </span>
+                        { tokenEstado ? (
+                        <>
+                            <span className="nav-item">
+                                <Link to='/react-pizzeria/profile'>
+                                    <button type="button" className="btn btn-outline-light">
+                                        🖐️Perfil
+                                    </button>
+                                </Link>
+                            </span>
+                        </>
+                        ):(
+                            <></>
+                        )}
                         <span className="nav-item">
                             <Link to='/react-pizzeria/cart'>
                                 <button type="button" className="btn btn-outline-primary">

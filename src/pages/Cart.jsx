@@ -1,11 +1,13 @@
 import React from 'react'
-import { useState, useContext } from 'react'
+import { useContext } from 'react'
 import { formatoValor } from '../helpers/formatoValor'
 import { CartContext } from '../context/CartContext'
+import { UserContext } from '../context/UserContext'
 
 
 const Cart = () => {
     const { cart, agregarProducto, quitarProducto, cantidadProducto, totalAPagar, totalProductos } = useContext(CartContext);
+    const { tokenEstado } = useContext(UserContext);
 
     return (
         <div>
@@ -45,7 +47,17 @@ const Cart = () => {
                 </div>
                 <div className="d-flex flex-column align-items-center my-2">
                     <h3>Total a pagar: ${formatoValor(totalAPagar)}</h3>
-                    <button className="btn btn-success align-items-center">Pagar</button>
+                    {
+                        tokenEstado ? (
+                            <>
+                            <button className="btn btn-success align-items-center">Pagar</button>
+                            </>
+                        ):(
+                            <></>
+                        )
+                    }
+                    
+                
                 </div>
             </div>
             )}

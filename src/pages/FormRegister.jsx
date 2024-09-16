@@ -77,7 +77,7 @@ const FormRegister = () => {
                       className="form-control" 
                       onChange={(e)=>setConfirmPassword(e.target.value)}
                       value = {confirmPassword}
-                      id="inputPassword"/>
+                      id="inputConfirmPassword"/>
               </div>
               {errorConfirmPassword ? <p className="form-text text-danger mt-2 text-center">Error: Las contraseñas no son iguales</p> : null}
               <button type="submit" className="btn btn-primary">Registrate</button>

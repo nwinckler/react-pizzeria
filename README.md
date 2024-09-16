@@ -24,4 +24,15 @@ Consumo de una API externa en la aplicación en Home, y creación de componente 
 ***
 React Router I
 ***
+
+## Hito 6 Pizzeria Mamma Mia (08-09-2024)
+***
+Utilización de context
+***
+
+## Hito 7 Pizzeria Mamma Mia (15-09-2024)
+***
+React Router II: Utilizar useParams, useNavigate y rutas protegidas
+***
+
 deploy: https://nwinckler.github.io/react-pizzeria/
