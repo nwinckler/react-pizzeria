@@ -35,4 +35,9 @@ Utilización de context
 React Router II: Utilizar useParams, useNavigate y rutas protegidas
 ***
 
+## Hito 8 Pizzeria Mamma Mia (29-09-2024)
+***
+JWT
+***
+
 deploy: https://nwinckler.github.io/react-pizzeria/

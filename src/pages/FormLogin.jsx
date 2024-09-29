@@ -1,48 +1,16 @@
 import React from 'react'
-import { useState, useContext } from 'react'
+import { useContext } from 'react'
 import { UserContext } from '../context/UserContext';
 
 const FormLogin = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [errorCampos, setErrorCampos] = useState(false);
-    const [errorPassword, setErrorPassword] = useState(false);
-
-    const { login } = useContext(UserContext);
-
-    const validarDatos = (e) => {
-        e.preventDefault();
-
-        //Validación campos obligatorios
-        
-        if (!email.trim() || !password.trim()) {
-            setErrorCampos(true);
-            return;
-        }
-
-        //Validación largo contraseña
-
-        if(password.length <= 5){
-            setErrorPassword(true);
-            return;
-        }
-
-        setErrorCampos(false);
-        setErrorPassword(false);
-        setEmail('');
-        setPassword('');
-        
-        login()
-        
-        alert("Ingresaste con éxito")
-    };
+    const { login, email, password, setEmail, setPassword, errorCampos, errorPassword} = useContext(UserContext);
 
     return (
         <>
-            <form className="formLogin" onSubmit={validarDatos}>
+            <form className="formLogin" onSubmit={login}>
                 <h1>Login</h1>
                 <div className="mb-3">
-                    <label for="inputEmail" className="form-label">Email</label>
+                    <label className="form-label">Email</label>
                     <input 
                         type="email" 
                         name="email" 
@@ -53,7 +21,7 @@ const FormLogin = () => {
                         aria-describedby="emailHelp"/>
                 </div>
                 <div className="mb-3">
-                    <label for="inputPassword" className="form-label">Contraseña</label>
+                    <label className="form-label">Contraseña</label>
                     <input 
                         type="password" 
                         name="password" 
